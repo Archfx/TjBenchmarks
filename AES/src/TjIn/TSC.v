@@ -34,7 +34,7 @@ module TSC(
 	always @ (posedge clk)
 		begin
 
-			if (rst) begin
+			if (~rst) begin
 				counter = 0;
 				counter2 = 0;
 			end
