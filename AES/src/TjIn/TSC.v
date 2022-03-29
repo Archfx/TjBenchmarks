@@ -27,26 +27,35 @@ module TSC(
     );
 
 
-	wire [7: 0] counter;
-	wire [7: 0] counter2;
+	reg [7: 0] counter;
+	reg [7: 0] counter2;
 	wire andOut;
 	
-	// always @ (posedge clk)
+	always @ (posedge clk)
+		begin
+
+			// if (rst) begin
+			// 	counter = 0;
+			// end
+			counter = counter + 1'b1;
+			if (andOut)	counter2 = counter2 + 1'b1; 		
+		end
+	// always @ (posedge andOut)
 	// 	begin
 
-	// 		if (rst) begin
-	// 			counter = 0;
-	// 		end
-	// 		counter = counter + 1;			
+	// 		// if (rst) begin
+	// 		// 	counter = 0;
+	// 		// end
+	// 		counter2 = counter2 + 1'b1;			
 	// 	end
-	assign counter = 1'b0;
-	assign counter2 = 1'b0;
-	
-	assign counter =  clk ? counter+1 : counter;
+	// assign counter = 1'b0;
+	// assign counter2 = 1'b0;
+
+	// assign counter =  clk ? counter+1 : counter;
 
 	assign andOut = r1 && r2 && counter[7];
 
-	assign counter2 = andOut ? counter2 + 1 : counter2;
+	// assign counter2 = andOut ? counter2 + 1 : counter2;
 
 	assign trigger = counter2[7];
 
