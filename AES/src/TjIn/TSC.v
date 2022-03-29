@@ -39,6 +39,8 @@ module TSC(
 	// 		end
 	// 		counter = counter + 1;			
 	// 	end
+	assign counter = 1'b0;
+	assign counter2 = 1'b0;
 	
 	assign counter =  clk ? counter+1 : counter;
 

@@ -1,5 +1,5 @@
 $date
-	Tue Mar 29 15:41:27 2022
+	Tue Mar 29 15:50:02 2022
 $end
 $version
 	Icarus Verilog
@@ -47,11 +47,11 @@ $var reg 128 C s0 [127:0] $end
 $scope module Trojan $end
 $var wire 1 D andOut $end
 $var wire 1 ! clk $end
-$var wire 1 E r1 $end
-$var wire 1 F r2 $end
+$var wire 8 E counter [7:0] $end
+$var wire 8 F counter2 [7:0] $end
+$var wire 1 G r1 $end
+$var wire 1 H r2 $end
 $var wire 1 $ trigger $end
-$var wire 8 G counter2 [7:0] $end
-$var wire 8 H counter [7:0] $end
 $upscope $end
 $scope module a1 $end
 $var wire 1 ! clk $end
@@ -5428,10 +5428,10 @@ bx L
 bx K
 bx J
 bx I
-bx H
-bx G
-1F
-1E
+1H
+1G
+bx F
+bx E
 xD
 bx C
 bx B
