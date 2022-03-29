@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module TSC(
     input clk,
-	// input rst,
+	input rst,
     input r1,
     input r2,
 	output trigger
@@ -34,9 +34,10 @@ module TSC(
 	always @ (posedge clk)
 		begin
 
-			// if (rst) begin
-			// 	counter = 0;
-			// end
+			if (rst) begin
+				counter = 0;
+				counter2 = 0;
+			end
 			counter = counter + 1'b1;
 			if (andOut)	counter2 = counter2 + 1'b1; 		
 		end
