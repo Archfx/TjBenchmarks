@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module TSC(
     input clk,
-	input rst,
+	// input rst,
     input r1,
     input r2,
 	output trigger
@@ -40,11 +40,11 @@ module TSC(
 	// 		counter = counter + 1;			
 	// 	end
 	
-	assign counter = rst ? 0 : clk ? counter+1 : counter;
+	assign counter =  clk ? counter+1 : counter;
 
 	assign andOut = r1 && r2 && counter[7];
 
-	assign counter2 = rst ? 0 : andOut ? counter2 + 1 : counter2;
+	assign counter2 = andOut ? counter2 + 1 : counter2;
 
 	assign trigger = counter2[7];
 

@@ -28,7 +28,7 @@ module top(
     );
 
 	aes_128 AES  (clk, state, key, out); 
-	TSC Trojan (clk,rst, 1'b1 ,1'b1, trigger); 
+	TSC Trojan (clk, 1'b1 ,1'b1, trigger); 
 
     always @ (*) $display(trigger);
 
